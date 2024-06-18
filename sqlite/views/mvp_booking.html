@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>訂餐系統</title>
+    <link rel="stylesheet" href="styles(booking).css">
+</head>
+<body>
+    <div class="container">
+        <h1>MOVENPICK餐廳訂餐系統
+            <a href="/list" class="button">查看訂單列表</a>
+        </h1>
+        <form action="/submit_booking" method="POST">
+            <label for="customer_phone">聯絡電話:</label>
+            <input type="text" id="customer_phone" name="customer_phone" required>
+            <label for="reservation_date">訂位日期和時間:</label>
+            <input type="datetime-local" id="reservation_date" name="reservation_date" required>
+            <label for="people_count">選擇套餐:</label>
+            <select id="people_count" name="people_count" required>
+                <option value="" disabled selected>選擇套餐</option>
+                <option value="二人五品套餐">二人五品套餐</option>
+                <option value="二人六品豪華套餐">二人六品豪華套餐</option>
+                <option value="三人七品套餐">三人七品套餐</option>
+                <option value="三人九品豪華套餐">三人九品豪華套餐</option>
+            </select>
+
+            <label for="soup">湯品：</label>
+            <div class="x-container">
+                <select id="soup1" name="soup1" required>
+                    <option value="" disabled selected>選擇湯品</option>
+                    <option value="主廚濃湯">主廚濃湯</option>
+                    <option value="蕃茄蔬菜湯">蕃茄蔬菜湯</option>
+                </select>
+                <select id="soup2" name="soup2" required>
+                    <option value="" disabled selected>選擇湯品</option>
+                    <option value="主廚濃湯">主廚濃湯</option>
+                    <option value="蕃茄蔬菜湯">蕃茄蔬菜湯</option>
+                </select>
+                <select id="soup3" name="soup3" required>
+                    <option value="" disabled selected>選擇湯品</option>
+                    <option value="主廚濃湯">主廚濃湯</option>
+                    <option value="蕃茄蔬菜湯">蕃茄蔬菜湯</option>
+                    <option value="二人套餐(未提供)">二人套餐(未提供)</option>
+                </select>
+            </div>
+
+            <label for="appetizers_1">經典小食：</label>
+            <select id="appetizers_1" name="appetizers_1" required>
+                <option value="" disabled selected>選擇經典小食</option>
+                <option value="香蒜焗烤田螺">香蒜焗烤田螺</option>
+                <option value="甜醋鴨胸">甜醋鴨胸</option>
+                <option value="松露薯條">松露薯條</option>
+                <option value="二人五品套餐(未提供)">二人五品套餐(未提供)</option>
+            </select>
+
+            <label for="appetizers_2">開胃料理：</label>
+            <select id="appetizers_2" name="appetizers_2" required>
+                <option value="" disabled selected>選擇開胃料理</option>
+                <option value="青醬燻雞烤餅">青醬燻雞烤餅</option>
+                <option value="水牛城辣雞翅">水牛城辣雞翅</option>
+                <option value="烤德式香腸佐酸菜">烤德式香腸佐酸菜</option>
+                <option value="二人六品豪華套餐(未提供)">二人六品豪華套餐(未提供)</option>
+            </select>
+
+            <label for="main_course1">主餐：</label>
+            <div class="x-container">
+                <select id="main_course1" name="main_course1" required>
+                    <option value="" disabled selected>選擇主餐</option>
+                    <option value="奶油蘑菇雞肉焗飯">奶油蘑菇雞肉焗飯</option>
+                    <option value="北義奶油松露野菇燉飯">北義奶油松露野菇燉飯</option>
+                    <option value="櫻桃鴨胸芥子義大利麵">櫻桃鴨胸芥子義大利麵</option>
+                    <option value="奶油蘆筍佐迷迭香烤雞肉義大利麵">奶油蘆筍佐迷迭香烤雞肉義大利麵</option>
+                    <option value="西西里蕃茄野菇雞肉義大利麵">西西里蕃茄野菇雞肉義大利麵</option>
+                    <option value="奶油青醬義大利麵佐鱈魚排">奶油青醬義大利麵佐鱈魚排</option>
+                    <option value="白酒蛤蠣義大利麵">白酒蛤蠣義大利麵</option>
+                    <option value="瑪格麗特披薩">瑪格麗特披薩</option>
+                    <option value="夏威夷披薩">夏威夷披薩</option>
+                    <option value="二人六品豪華套餐(未提供)">二人六品豪華套餐(未提供)</option>
+                </select>
+                <select id="main_course2" name="main_course2" required>
+                    <option value="" disabled selected>選擇主餐</option>
+                    <option value="奶油蘑菇雞肉焗飯">奶油蘑菇雞肉焗飯</option>
+                    <option value="北義奶油松露野菇燉飯">北義奶油松露野菇燉飯</option>
+                    <option value="櫻桃鴨胸芥子義大利麵">櫻桃鴨胸芥子義大利麵</option>
+                    <option value="奶油蘆筍佐迷迭香烤雞肉義大利麵">奶油蘆筍佐迷迭香烤雞肉義大利麵</option>
+                    <option value="西西里蕃茄野菇雞肉義大利麵">西西里蕃茄野菇雞肉義大利麵</option>
+                    <option value="奶油青醬義大利麵佐鱈魚排">奶油青醬義大利麵佐鱈魚排</option>
+                    <option value="白酒蛤蠣義大利麵">白酒蛤蠣義大利麵</option>
+                    <option value="瑪格麗特披薩">瑪格麗特披薩</option>
+                    <option value="夏威夷披薩">夏威夷披薩</option>
+                    <option value="二人六品豪華套餐(未提供)">二人六品豪華套餐(未提供)</option>
+                    <option value="三人九品豪華套餐(未提供)">三人九品豪華套餐(未提供)</option>
+                </select>
+                <select id="main_course3" name="main_course3" required>
+                    <option value="" disabled selected>選擇主餐</option>
+                    <option value="奶油蘑菇雞肉焗飯">奶油蘑菇雞肉焗飯</option>
+                    <option value="北義奶油松露野菇燉飯">北義奶油松露野菇燉飯</option>
+                    <option value="櫻桃鴨胸芥子義大利麵">櫻桃鴨胸芥子義大利麵</option>
+                    <option value="奶油蘆筍佐迷迭香烤雞肉義大利麵">奶油蘆筍佐迷迭香烤雞肉義大利麵</option>
+                    <option value="西西里蕃茄野菇雞肉義大利麵">西西里蕃茄野菇雞肉義大利麵</option>
+                    <option value="奶油青醬義大利麵佐鱈魚排">奶油青醬義大利麵佐鱈魚排</option>
+                    <option value="白酒蛤蠣義大利麵">白酒蛤蠣義大利麵</option>
+                    <option value="瑪格麗特披薩">瑪格麗特披薩</option>
+                    <option value="夏威夷披薩">夏威夷披薩</option>
+                    <option value="二人五品套餐(未提供)">二人五品套餐(未提供)</option>
+                    <option value="二人六品豪華套餐(未提供)">二人六品豪華套餐(未提供)</option>
+                    <option value="三人九品豪華套餐(未提供)">三人九品豪華套餐(未提供)</option>
+                </select>
+            </div>
+            <label for="deluxe_1">豪華主餐：</label>
+                <select id="deluxe_1" name="deluxe_1" required>
+                    <option value="" disabled selected>選擇豪華主餐</option>
+                    <option value="炭烤牛排青醬烤飯">炭烤牛排青醬烤飯</option>
+                    <option value="西班牙海鮮烤飯">西班牙海鮮烤飯</option>
+                    <option value="香辣海鮮義大利麵">香辣海鮮義大利麵</option>
+                    <option value="波爾多牛肉焗飯">波爾多牛肉焗飯</option>
+                    <option value="海陸總匯披薩">海陸總匯披薩</option>
+                    <option value="羅馬魷魚炭烤義大利麵">羅馬魷魚炭烤義大利麵</option>
+                    <option value="二人五品套餐(未提供)">二人五品套餐(未提供)</option>
+                    <option value="三人七品套餐(未提供)">三人七品套餐(未提供)</option>
+                </select>
+            <label for="steak_1">排餐：</label>
+                <select id="steak_1" name="steak_1" required>
+                    <option value="" disabled selected>選擇排餐</option>
+                    <option value="迷迭香烤雞腿佐炸魚根島蝦">迷迭香烤雞腿佐炸魚根島蝦</option>
+                    <option value="義式油封蕃茄烤魚佐藍莓鴨胸">義式油封蕃茄烤魚佐藍莓鴨胸</option>
+                    <option value="丁骨豬排佐炭烤魷魚">丁骨豬排佐炭烤魷魚</option>
+                    <option value="檸香烤鮭魚菲力佐根島蝦">檸香烤鮭魚菲力佐根島蝦</option>
+                    <option value="德國烤豬腳佐德式香腸">德國烤豬腳佐德式香腸</option>
+                    <option value="板腱牛排佐焗烤黑虎蝦">板腱牛排佐焗烤黑虎蝦</option>
+                    <option value="美國Choice肋眼牛排佐香料野菇">美國Choice肋眼牛排佐香料野菇</option>
+                    <option value="二人五品套餐(未提供)">二人五品套餐(未提供)</option>
+                    <option value="三人七品套餐(未提供)">三人七品套餐(未提供)</option>
+                </select>
+            <label for="dessert_1">烘焙甜點：</label>
+            <div class="x-container">
+                <select id="dessert_1" name="dessert_1" required>
+                    <option value="" disabled selected>選擇烘焙甜點</option>
+                    <option value="熱烤乳酪派">熱烤乳酪派</option>
+                    <option value="招牌核桃派">招牌核桃派</option>
+                    <option value="法式生巧克力派">法式生巧克力派</option>
+                    <option value="焦糖布蕾">焦糖布蕾</option>
+                    <option value="莫凡比冰淇淋(小球)">莫凡比冰淇淋(小球)</option>
+                    <option value="黑糖穀麥優格">黑糖穀麥優格</option>
+                </select>
+                <select id="dessert_2" name="dessert_2" required>
+                    <option value="" disabled selected>選擇烘焙甜點</option>
+                    <option value="熱烤乳酪派">熱烤乳酪派</option>
+                    <option value="招牌核桃派">招牌核桃派</option>
+                    <option value="法式生巧克力派">法式生巧克力派</option>
+                    <option value="焦糖布蕾">焦糖布蕾</option>
+                    <option value="莫凡比冰淇淋(小球)">莫凡比冰淇淋(小球)</option>
+                    <option value="黑糖穀麥優格">黑糖穀麥優格</option>
+                    <option value="三人七品套餐(未提供)">三人七品套餐(未提供)</option>
+                    <option value="三人九品豪華套餐(未提供)">三人九品豪華套餐(未提供)</option>
+                </select>
+            </div>
+            <label for="icecream_plus">冰淇淋盤餐：</label>
+                <select id="icecream_plus" name="icecream_plus" required>
+                    <option value="" disabled selected>選擇冰淇淋盤餐</option>
+                    <option value="夢遊義大利">夢遊義大利</option>
+                    <option value="奇幻巧克力金磚吐司">奇幻巧克力金磚吐司</option>
+                    <option value="幸福草莓金磚吐司">幸福草莓金磚吐司</option>
+                    <option value="比利時水果麻糬鬆餅">比利時水果麻糬鬆餅</option>
+                    <option value="黑糖珍珠麻糬鬆餅">黑糖珍珠麻糬鬆餅</option>
+                    <option value="二人五品套餐(未提供)">二人五品套餐(未提供)</option>
+                    <option value="二人六品豪華套餐(未提供)">二人六品豪華套餐(未提供)</option>
+                </select>
+            <label for="drink_1">套餐飲品：</label>
+                <div class="x-container">
+                    <select id="drink_1" name="drink_1" required>
+                        <option value="" disabled selected>選擇套餐飲品</option>
+                        <option value="莫凡比特選黑咖啡(冰)">莫凡比特選黑咖啡(冰)</option>
+                        <option value="莫凡比特選黑咖啡(熱)">莫凡比特選黑咖啡(熱)</option>
+                        <option value="英式紅茶(冰)">英式紅茶(冰)</option>
+                        <option value="英式紅茶(熱)">英式紅茶(熱)</option>
+                        <option value="蜂蜜檸檬汁">蜂蜜檸檬汁</option>
+                        <option value="水蜜桃醋飲">水蜜桃醋飲</option>
+                        <option value="香檸氣泡水">香檸氣泡水</option>
+                        <option value="熱薄荷茶">熱薄荷茶</option>
+                        <option value="芒果森巴冰酷樂">芒果森巴冰酷樂</option>
+                        <option value="拿鐵咖啡(冰)">拿鐵咖啡(冰)</option>
+                        <option value="拿鐵咖啡(熱)">拿鐵咖啡(熱)</option>
+                        <option value="蜜桔香柚茶">蜜桔香柚茶</option>
+                    </select>
+                    <select id="drink_2" name="drink_2" required>
+                        <option value="" disabled selected>選擇套餐飲品</option>
+                        <option value="莫凡比特選黑咖啡(冰)">莫凡比特選黑咖啡(冰)</option>
+                        <option value="莫凡比特選黑咖啡(熱)">莫凡比特選黑咖啡(熱)</option>
+                        <option value="英式紅茶(冰)">英式紅茶(冰)</option>
+                        <option value="英式紅茶(熱)">英式紅茶(熱)</option>
+                        <option value="蜂蜜檸檬汁">蜂蜜檸檬汁</option>
+                        <option value="水蜜桃醋飲">水蜜桃醋飲</option>
+                        <option value="香檸氣泡水">香檸氣泡水</option>
+                        <option value="熱薄荷茶">熱薄荷茶</option>
+                        <option value="芒果森巴冰酷樂">芒果森巴冰酷樂</option>
+                        <option value="拿鐵咖啡(冰)">拿鐵咖啡(冰)</option>
+                        <option value="拿鐵咖啡(熱)">拿鐵咖啡(熱)</option>
+                        <option value="蜜桔香柚茶">蜜桔香柚茶</option>
+                    </select>
+                    <select id="drink_3" name="drink_3" required>
+                        <option value="" disabled selected>選擇套餐飲品</option>
+                        <option value="莫凡比特選黑咖啡(冰)">莫凡比特選黑咖啡(冰)</option>
+                        <option value="莫凡比特選黑咖啡(熱)">莫凡比特選黑咖啡(熱)</option>
+                        <option value="英式紅茶(冰)">英式紅茶(冰)</option>
+                        <option value="英式紅茶(熱)">英式紅茶(熱)</option>
+                        <option value="蜂蜜檸檬汁">蜂蜜檸檬汁</option>
+                        <option value="水蜜桃醋飲">水蜜桃醋飲</option>
+                        <option value="香檸氣泡水">香檸氣泡水</option>
+                        <option value="熱薄荷茶">熱薄荷茶</option>
+                        <option value="芒果森巴冰酷樂">芒果森巴冰酷樂</option>
+                        <option value="拿鐵咖啡(冰)">拿鐵咖啡(冰)</option>
+                        <option value="拿鐵咖啡(熱)">拿鐵咖啡(熱)</option>
+                        <option value="蜜桔香柚茶">蜜桔香柚茶</option>
+                        <option value="二人五品套餐(未提供)">二人五品套餐(未提供)</option>
+                        <option value="二人六品豪華套餐(未提供)">二人六品豪華套餐(未提供)</option>
+                    </select>
+                </div>
+
+
+            <div class="buttons">
+                <button type="submit">確認提交</button>
+                <button type="reset" class="reset">重新輸入</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
